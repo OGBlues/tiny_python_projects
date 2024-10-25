@@ -1,18 +1,40 @@
 #!/usr/bin/env python3
-# say hello
+"""
+Author : oliver <oliver@localhost>
+Date   : 2024-10-25
+Purpose: Rock the Casbah
+"""
 
 import argparse
 
+
+# --------------------------------------------------
 def get_args():
-    parser = argparse.ArgumentParser(description="Say Hello")
-    parser.add_argument('-n', '--name', metavar="name", default="World", help='Name to greet')
+    """Get command-line arguments"""
+
+    parser = argparse.ArgumentParser(
+        description='Rock the Casbah',
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+
+    parser.add_argument('-n',
+                        '--name',
+                        help='name to greet',
+                        metavar='name',
+                        type=str,
+                        default='World')
+
+
     return parser.parse_args()
 
+
+# --------------------------------------------------
 def main():
+    """Make a jazz noise here"""
+
     args = get_args()
-    name = args.name
-    print ("Hello, " + name + "!")
+    print('Hello, ' + args.name +'!')
 
 
+# --------------------------------------------------
 if __name__ == '__main__':
     main()
